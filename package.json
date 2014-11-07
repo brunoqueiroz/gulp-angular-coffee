@@ -37,7 +37,8 @@
     "protractor": "^1.1.1",
     "uglify-save-license": "^0.4.1",
     "gulp-sass": "^0.7.3",
-    "gulp-coffee": "^2.2.0"
+    "gulp-coffee": "^2.2.0",
+    "karma-chrome-launcher": "^0.1.5"
   },
   "engines": {
     "node": ">=0.10.0"

@@ -13,13 +13,14 @@ module.exports = function(config) {
         'test/unit/** /*.js'
     ],
 
-    autoWatch : false,
+    autoWatch : true,
 
     frameworks: ['jasmine'],
 
-    browsers : ['PhantomJS'],
+    browsers : ['Chrome'],
 
     plugins : [
+        'karma-chrome-launcher',
         'karma-phantomjs-launcher',
         'karma-jasmine'
     ]
