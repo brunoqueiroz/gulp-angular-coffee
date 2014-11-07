@@ -9,9 +9,13 @@ module.exports = function(config) {
         'src/bower_components/angular/angular.js',
         'src/bower_components/angular/angular-route.js',
         'src/bower_components/angular-mocks/angular-mocks.js',
-        'src/{app,components}/** /*.js',
+        'src/{app,components}/**/*.js',
         'test/unit/** /*.js'
     ],
+
+    preprocessors: {
+      '**/*.coffee': ['coffee']
+    },
 
     autoWatch : true,
 
@@ -19,7 +23,20 @@ module.exports = function(config) {
 
     browsers : ['Chrome'],
 
+    coffeePreprocessor: {
+      // options passed to the coffee compiler
+      options: {
+        bare: true,
+        sourceMap: false
+      },
+      // transforming the filenames
+      transformPath: function(path) {
+        return path.replace(/\.coffee$/, '.js');
+      }
+    },
+
     plugins : [
+        'karma-coffee-preprocessor',
         'karma-chrome-launcher',
         'karma-phantomjs-launcher',
         'karma-jasmine'

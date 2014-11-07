@@ -16,13 +16,14 @@ gulp.task('test', function() {
 
   var testFiles = bowerDeps.js.concat([
     '.tmp/{app,components}/**/*.js',
+    'test/unit/**/*.coffee', //necessário para rodar o preprocessor
     'test/unit/**/*.js'
   ]);
 
   return gulp.src(testFiles)
     .pipe($.karma({
       configFile: 'test/karma.conf.js',
-      action: 'run'
+      action: 'watch'
     }))
     .on('error', function(err) {
       // Make sure failed tests cause gulp to exit non-zero
