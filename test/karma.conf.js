@@ -15,7 +15,13 @@ module.exports = function(config) {
 
     preprocessors: {
       '**/*.coffee': ['coffee'],
-      '.tmp/{app,components}/**/*.js' : ['coverage']
+      '.tmp/{app,components}/**/*.js' : ['coverage'],
+      'src/{app,components}/**/*.html' : ['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix : 'src/',
+      stripSufix  : '.html'
     },
 
     //!\\ Ignored through gulp-karma //!\\    
@@ -52,6 +58,7 @@ module.exports = function(config) {
     },
 
     plugins : [
+        'karma-ng-html2js-preprocessor',
         'karma-coverage',   
         'karma-coffee-preprocessor',
         'karma-chrome-launcher',
