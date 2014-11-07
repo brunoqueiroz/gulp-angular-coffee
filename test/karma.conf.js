@@ -14,10 +14,26 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-      '**/*.coffee': ['coffee']
+      '**/*.coffee': ['coffee'],
+      '.tmp/{app,components}/**/*.js' : ['coverage']
     },
 
-    autoWatch : true,
+    //!\\ Ignored through gulp-karma //!\\    
+    autoWatch : true, 
+
+     // generates the coverage
+    reporters: [
+      'progress',
+      'coverage'
+    ],
+
+     // Output coverage file
+    coverageReporter: {
+      type : 'lcov',
+      subdir: 'report-lcov',
+      // output path
+      dir : 'test/coverage/'
+    },
 
     frameworks: ['jasmine'],
 
@@ -36,6 +52,7 @@ module.exports = function(config) {
     },
 
     plugins : [
+        'karma-coverage',   
         'karma-coffee-preprocessor',
         'karma-chrome-launcher',
         'karma-phantomjs-launcher',
