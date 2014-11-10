@@ -10,7 +10,6 @@ var middleware = require('./proxy');
 
 function browserSyncInit(baseDir, files, browser) {
   browser = browser === undefined ? 'default' : browser;
-
   var routes = null;
   if(baseDir === 'src' || (util.isArray(baseDir) && baseDir.indexOf('src') !== -1)) {
     routes = {

@@ -4,5 +4,5 @@ angular.module 'gulpAngular'
   $stateProvider
   .state 'login',
     url: '/login'
-    templateUrl: 'app/account/login/login.tmpl.html'
+    templateUrl: 'app/login/login.tmpl.html'
     controller: 'LoginCtrl'

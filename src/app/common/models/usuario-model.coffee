@@ -1,8 +1,6 @@
-app.factory "Usuario", ->
+angular.module("gulpAngular").factory "Usuario", ->
   class Usuario
     constructor: (@id, @nome) ->
-
-    setData: (usuario) ->
+    build: (usuario) ->
       angular.extend(@, usuario)
-
 
