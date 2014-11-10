@@ -6,3 +6,4 @@ angular.module 'gulpAngular'
     url: '/login'
     templateUrl: 'app/login/login.tmpl.html'
     controller: 'LoginCtrl'
+    

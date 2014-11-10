@@ -21,7 +21,7 @@ var chalk = require('chalk');
 /*
  * Location of your backend server
  */
-var proxyTarget = 'http://server/context/';
+var proxyTarget = 'http://localhost:8080/rnp/api';
 
 var proxy = httpProxy.createProxyServer({
   target: proxyTarget
