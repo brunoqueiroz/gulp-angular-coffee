@@ -3,6 +3,8 @@ dist
 .tmp
 .sass-cache
 src/bower_components
+bower_components
+bower_components/**/*
 test/coverage
 test/coverage/**/*
 .DS_Store
