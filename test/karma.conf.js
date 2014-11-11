@@ -33,6 +33,8 @@ module.exports = function(config) {
       'coverage'
     ],
 
+    exclude: ['src/{app,components}/**/*.tmpl.js'],
+
      // Output coverage file
     coverageReporter: {
       type : 'lcov',

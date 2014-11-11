@@ -18,8 +18,8 @@ gulp.task('test', function() {
 
   var testFiles = bowerDeps.js.concat([
     '.tmp/{app,components}/**/*.js',
-    'test/unit/**/*.coffee', //necessário para rodar o preprocessor
-    'test/unit/**/*.js',
+    'src/{app,components}/**/*.spec.coffee',
+    'src/{app,components}/**/*.spec.js',
     'src/{app,components}/**/*.html',
   ]);
 
