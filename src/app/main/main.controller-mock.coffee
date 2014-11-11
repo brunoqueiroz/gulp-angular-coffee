@@ -1,1 +1,0 @@
-main.controller-mock.coffee
