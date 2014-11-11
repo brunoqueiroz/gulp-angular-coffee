@@ -53,17 +53,20 @@
     <!-- endbuild -->
 
     <!-- build:js({src,.tmp}) scripts/app.js -->
-    <script src="app/index.js"></script>
     
-    <script src="app/main/main.js"></script>
-    <script src="app/main/main.controller.js"></script>
-    <script src="components/navbar/navbar.controller.js"></script>
-
-    <script src="app/login/login.js"></script>
-    <script src="app/login/login.controller.js"></script>
-
-    <script src="app/common/models/usuario-model.js"></script>
-    
+    <!-- head:js -->
+    <!-- only importantFile.js will be injected here -->
+    <!-- endinject -->
+    <script src="app/index.js"></script> 
+   <!-- inject:js -->
+   <script src="app/login/login.controller.js"></script>
+   <script src="app/login/login.js"></script>
+   <script src="app/main/main.controller.js"></script>
+   <script src="app/main/main.js"></script>
+   <script src="components/navbar/navbar.controller.js"></script>
+   <script src="components/navbar/navbar.js"></script>
+   <script src="app/common/models/usuario-model.js"></script>
+   <!-- endinject -->
 
     <!-- inject:partials -->
     <!-- angular templates will be automaticaly converted in js and inserted here -->

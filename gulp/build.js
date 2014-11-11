@@ -26,6 +26,24 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('.tmp'));
 });
 
+
+gulp.task('injector', function() {
+  return gulp.src('src/index.html')
+    .pipe($.inject(gulp.src(['.tmp/{app,components}/**/*.js', 
+                            '!.tmp/app/index.js',
+                            '!.tmp/{app,components}/**/*-spec.js',
+                            '!.tmp/{app,components}/**/*-mock.js' ], {read: false}), {
+      transform: function(filePath) {
+        console.log(filePath);
+        filePath = filePath.replace('/src/', '');
+        filePath = filePath.replace('/.tmp/', '');
+        console.log('after', filePath)
+        return '<script src="' + filePath + '"></script>';
+      }
+    }))
+    .pipe(gulp.dest('src'));
+});
+
 gulp.task('partials', function () {
   return gulp.src('src/{app,components}/**/*.html')
     .pipe($.minifyHtml({
