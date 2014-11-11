@@ -8,7 +8,7 @@ var wiredep = require('wiredep');
 
 var argv = require('yargs').argv;
 
-gulp.task('test', function() {
+gulp.task('test', ['styles','injector'], function() {
   var bowerDeps = wiredep({
     directory: 'bower_components',
     exclude: ['bootstrap-sass-official'],

@@ -12,7 +12,8 @@ describe "controllers", ->
       $scope: scope
 
     expect(angular.isArray(scope.awesomeThings)).toBeTruthy()
-    expect(scope.awesomeThings.length > 5).toBeTruthy()
+    expect(scope.awesomeThings.length > 6).toBeTruthy()
     return
   )
   return
+ 
