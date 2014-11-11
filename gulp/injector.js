@@ -10,8 +10,9 @@ gulp.task('injector',['scripts'], function() {
   return gulp.src('src/index.html')
     .pipe($.inject(gulp.src(['.tmp/{app,components}/**/*.js', 
                             '!.tmp/app/index.js',
-                            '!.tmp/{app,components}/**/*-spec.js',
-                            '!.tmp/{app,components}/**/*-mock.js' ], {read: false}), {
+                            '!.tmp/{app,components}/**/*.spec.js',
+                            '!.tmp/{app,components}/**/*.tmpl.js',
+                            '!.tmp/{app,components}/**/*.mock.js' ], {read: false}), {
       transform: function(filePath) {
         filePath = filePath.replace('/src/', '');
         filePath = filePath.replace('/.tmp/', '');
